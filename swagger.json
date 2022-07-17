@@ -1,0 +1,124 @@
+{
+	"openapi": "3.0.3",
+	"info": {
+		"title": "Water Jug Challenge",
+		"description": "API To Solve Water Jug Challenge",
+		"version": "0.0.1"
+	},
+	"schemes": ["https"],
+	"consumes": ["application/json"],
+	"produces": ["application/json"],
+	"paths": {
+		"/challenges/water-jug": {
+			"get": {
+				"description": "Solve water jug challenge",
+				"parameters": [
+					{
+						"name": "firstJugCapacity",
+						"in": "query",
+						"required": true,
+						"type": "number"
+					},
+					{
+						"name": "secondJugCapacity",
+						"in": "query",
+						"required": true,
+						"type": "number"
+					},
+					{
+						"name": "desiredAmount",
+						"in": "query",
+						"required": true,
+						"type": "number"
+					}
+				],
+				"responses": {
+					"201": {
+						"description": "OK",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {
+										"solvable": {
+											"type": "boolean"
+										},
+										"minSteps": {
+											"type": "number"
+										},
+										"biggerJugCapacity": {
+											"type": "number"
+										},
+										"smallerJugCapacity": {
+											"type": "number"
+										},
+										"steps": {
+											"type": "array",
+											"items": {
+												"type": "object",
+												"properties": {
+													"smallerJugContent": {
+														"type": "number"
+													},
+													"biggerJugContent": {
+														"type": "number"
+													},
+													"action": {
+														"type": "object",
+														"properties": {
+															"type": {
+																"type": "string"
+															},
+															"bucket": {
+																"type": "string"
+															},
+															"originBucket": {
+																"type": "string"
+															},
+															"destinationBucket": {
+																"type": "string"
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								},
+								"example": {
+									"solvable": true,
+									"minSteps": 1,
+									"biggerJugCapacity": 10,
+									"smallerJugCapacity": 2,
+									"steps": [
+										{
+											"smallerJugContent": 2,
+											"biggerJugContent": 0,
+											"action": {
+												"type": "FILL",
+												"bucket": "SMALLER"
+											}
+										},
+										{
+											"smallerJugContent": 0,
+											"biggerJugContent": 2,
+											"action": {
+												"type": "TRANSFER",
+												"originJug": "SMALLER",
+												"destinationJug": "BIGGER"
+											}
+										}
+									]
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "BAD REQUEST"
+					}
+				},
+				"tags": ["Challenges"]
+			}
+		}
+	}
+}

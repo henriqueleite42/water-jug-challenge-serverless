@@ -1,0 +1,25 @@
+name: swagger
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install Dependencies
+        run: |
+          yarn
+
+      - name: Build
+        run: yarn swagger
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.1
+        with:
+          branch: swagger # The branch the action should deploy to.
+          folder: swagger # The folder the action should deploy

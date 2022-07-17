@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+  api:
+    build: "."
+    container_name: water_jug_challenge_api
+    command: yarn internal:local
+    ports:
+      - 3000:3000
+    networks:
+      - water_jug_challenge_network
+    volumes:
+      - ./:/app/
+      - nodemodules:/app/node_modules
+      - layers:/app/layers
+
+volumes:
+  nodemodules:
+  layers:
+
+networks:
+  water_jug_challenge_network:
+    driver: bridge
