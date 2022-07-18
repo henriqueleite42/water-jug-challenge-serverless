@@ -480,10 +480,10 @@
     eslint-plugin-react-hooks "^4.2.1-alpha-4298ddbc5-20211023"
     eslint-plugin-sonarjs "^0.11.0"
 
-"@techmmunity/water-jug-solver@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@techmmunity/water-jug-solver/-/water-jug-solver-1.0.0.tgz#468d2778e3d23d175a984e94a84dce47a4648b10"
-  integrity sha512-lMa7IyFdSgXFKCokfXBMidmaHwTuhp1T+e99DM6zBEuwjg7bKpc0tb0XWWOk8dbq+KuCc2iOAhYu5bI7gFYPvQ==
+"@techmmunity/water-jug-solver@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@techmmunity/water-jug-solver/-/water-jug-solver-2.0.0.tgz#1273962b11d81569b50f515dd6cd4b422f1fedb6"
+  integrity sha512-wwOPJaqWTqNfNuF/ekZcWOvCQ+8xfG179F04Z3ZrtqXESGvpMLEvnIWBzNxbu9Bz4rTwIpLs1jTspG5NtgPPtQ==
 
 "@tokenizer/token@^0.3.0":
   version "0.3.0"

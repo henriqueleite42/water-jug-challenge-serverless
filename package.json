@@ -6,7 +6,7 @@
 	"private": false,
 	"license": "Apache-2.0",
 	"dependencies": {
-		"@techmmunity/water-jug-solver": "^1.0.0",
+		"@techmmunity/water-jug-solver": "^2.0.0",
 		"yup": "^0.32.11"
 	},
 	"devDependencies": {
